@@ -1,0 +1,97 @@
+/* force scrollbar to be
+*  visible on mobile devices
+*-------------------------------------------*/
+.modal-body {
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal ::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.modal ::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+.modal ::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+.modal ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+.modal ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+/* prevent zooming on iOs devices when interacting with inputs */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select,
+    textarea,
+    input {
+        font-size: 16px !important;
+    }
+}
+
+/* Modal Wrappers
+*-------------------------------------------*/
+.modal .modal-header {
+    position: absolute;
+    width: 100%;
+    padding: 10px 5px;
+    background: white;
+    z-index: 1;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.modal .modal-body {
+    padding: 15px;
+    max-height: 400px !important;
+}
+
+.modal .modal-header .close {
+    text-shadow: none;
+    border: none;
+    margin: -10px -5px -10px -20px;
+    padding: 10px 10px;
+    border-left: 1px solid #c0c0c0;
+}
+
+/* Media Queries
+*-------------------------------------------*/
+@media (max-width: 1199px) {
+    .modal {
+        position: fixed;
+        top: 50% !important;
+        left: 50% !important;
+        max-height: 450px !important;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        bottom: auto;
+        right: auto;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal {
+        -webkit-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1199px) {
+    .modal {
+        width: 75% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        width: 90% !important;
+    }
+}
