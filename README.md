@@ -1,2 +1,2 @@
-# bootstrap
-Repositories for the Bootstrap CSS framework
+# Bootstrap Repositories
+References and fixes for the Bootstrap CSS framework
