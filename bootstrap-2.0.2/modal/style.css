@@ -1,7 +1,7 @@
 /* force scrollbar to be
 *  visible on mobile devices
 *-------------------------------------------*/
-.modal-body {
+.modal  .modal-body {
     -webkit-overflow-scrolling: touch;
 }
 
@@ -28,13 +28,35 @@
     background-color: #ffffff;
 }
 
-/* prevent zooming on iOs devices when interacting with inputs */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    select,
-    textarea,
-    input {
-        font-size: 16px !important;
-    }
+/* Modal Settings
+* Form styles when used in popup modal
+*-----------------------------------------------------*/
+.modal-body > div {
+    padding-top: 50px;
+    text-align: left;
+    -webkit-backface-visibility: hidden;
+}
+
+.modal-header {
+    position: absolute;
+    width: 100%;
+    padding: 10px 5px;
+    background: white;
+    z-index: 1;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.modal-body {
+    padding: 15px;
+    max-height: 400px !important;
+}
+
+.modal-header .close {
+    text-shadow: none;
+    border: none;
+    margin: -10px -5px -10px -20px;
+    padding: 10px 10px;
+    border-left: 1px solid #c0c0c0;
 }
 
 /* Modal Wrappers
@@ -63,6 +85,15 @@
 
 /* Media Queries
 *-------------------------------------------*/
+/* lg desktop */
+@media (min-width: 1200px) {
+    .modal {
+        -webkit-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+    }
+}
+
+/* sm mobile ~ md desktop */
 @media (max-width: 1199px) {
     .modal {
         position: fixed;
@@ -77,21 +108,27 @@
     }
 }
 
-@media (min-width: 1200px) {
-    .modal {
-        -webkit-transform: translate(0%, 0%);
-        transform: translate(0%, 0%);
-    }
-}
-
+/* tablet */
 @media (min-width: 481px) and (max-width: 1199px) {
     .modal {
         width: 75% !important;
     }
 }
 
+/* mobile */
 @media (max-width: 480px) {
     .modal {
         width: 90% !important;
+    }
+
+    .modal .modal-body {
+        padding: 15px 5px;
+    }
+
+    /* prevent zooming on iOs devices when interacting with inputs */
+    .modal select,
+    .modal textarea,
+    .modal input {
+        font-size: 16px !important;
     }
 }
