@@ -1,4 +1,7 @@
-    // Allows scrolling on elements transform in Safari
+    /**
+    * Fixes safari issues with bootstrap 2.0 modals
+    */
+    //Allows scrolling on elements transform in Safari
     function fixSafariScrolling(event) {
         event.target.style.overflowY = 'hidden';
         setTimeout(function () { event.target.style.overflowY = 'auto'; });
@@ -6,7 +9,7 @@
 
     // Add scrolling fix for every .modal element
     for (var i = 0 ; i < jQuery('.modal').length; i++) {
-       jQuery('.modal')[i].addEventListener('webkitAnimationEnd', fixSafariScrolling);
+      jQuery('.modal')[i].addEventListener('webkitAnimationEnd', fixSafariScrolling);
     }
 
     var scrollPos = 0;
