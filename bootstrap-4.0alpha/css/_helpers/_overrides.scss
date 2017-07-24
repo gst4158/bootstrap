@@ -1,0 +1,71 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Overrides - snippets of code that generates mass portions of CSS
+//==========================================================================//
+
+/* color over rides */
+@each $color in $colors {
+  $key: nth($color, 1);
+  $value: nth($color, 2);
+  .txt-#{$key} {
+    color: $value !important;
+  }
+}
+
+/* breakpoint over rides */
+$breakpoints:('desktop', 'mobile', 'tablet');
+@each $point in $breakpoints {
+  @include media-query( unquote("#{$point}") ) {
+    .#{$point}-hide {
+      display: none;
+    }
+  }
+};
+
+//==========================================================================//
+// Creates global text items
+// $font-list is an array of all available font families
+// generates: .txt-Opensans-cond-light {font-family: "'Opensans-cond-light', Arial, Helvetica, sans-serif" !important; font-weight: normal !important; }
+//==========================================================================//
+/* font-family overrides */
+@each $family in $font-list {
+  $txt-temp-var: '.' + nth($family, 1);
+  #{$txt-temp-var} {
+    font-family: nth($family, 2) !important;
+    font-weight: nth($family, 3) !important;
+  }
+}
+
+/* force the smaller size font-family so it's readable */
+small, .small {
+    font-family: $secondary-font;
+}
+
+/* override oswald typeface for form interactions */
+label, input, textarea, select, textarea {
+    font-family: $secondary-font;
+}
+
+//==========================================================================//
+// Flexbox Overrides
+//
+//==========================================================================//
+.flex-align-items-center {
+    align-items: center !important;
+}
+.flex-align-items-start {
+    align-items: flex-start !important;
+}
+.flex-align-items-end {
+    align-items: flex-end !important;
+}
+.flex-align-items-baseline {
+    align-items: flex-baseline !important;
+}
+.flex-align-self-start {
+    align-self: flex-start !important;
+}
+.flex-align-self-end {
+    align-self: flex-end !important;
+}

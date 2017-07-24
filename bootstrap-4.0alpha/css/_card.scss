@@ -1,0 +1,9 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Overrides and adjustments to bootstraps card module
+//==========================================================================//
+.card,
+.card .list-group-item {
+    border-color: lighten($gray, 20%);
+}

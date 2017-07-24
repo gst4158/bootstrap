@@ -1,0 +1,25 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Buttons - 4.0 bootstrap
+// Overrides/adjust basic functions of bootstrap buttons
+//==========================================================================//
+.btn,
+.btn-primary:focus {
+    box-shadow: none !important;
+}
+
+.btn-outline-info {
+    background: white;
+}
+
+/* enable fixed buttons with directional position */
+.btn-fixed {
+    position: fixed;
+    z-index: 1001;
+    @each $direction in $directions {
+        &.bnt-fixed-#{$direction} {
+            #{$direction}: 10px;
+        }
+    }
+}

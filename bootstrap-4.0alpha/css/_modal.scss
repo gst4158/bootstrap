@@ -1,0 +1,91 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Modal - 4.0 bootstrap
+// Overrides/adjust basic functions to the bootstrap modal
+//==========================================================================//
+.modal[aria-position="center"] {
+
+    // center modals
+    > div.modal-dialog  {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%) !important;
+        transform: translate(-50%, -50%) !important;
+        margin: auto;
+        outline: none !important;
+
+        // add animation back since we lost it by overriding bootstrap
+        //-webkit-animation-name: modalFadeInDown;
+        //animation-name: modalFadeInDown;
+        -webkit-animation-duration: .3s;
+        animation-duration: .3s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+    }
+
+    .modal-header {
+        padding: 10px 15px 5px;
+    }
+
+    .modal-body {
+        overflow: auto;
+        max-height: 400px;
+    }
+
+    // large size modals
+    &.modal-lg {
+        max-width: 100%;
+        > div.modal-dialog {
+            width: 80%;
+            max-width: 100%;
+        }
+    }
+}
+
+// responsive modals
+@include media-query( 'mobile' ) {
+    .modal[aria-position="center"].modal-lg > div.modal-dialog,
+    .modal.modal-lg > div.modal-dialog,
+    .modal .modal-dialog {
+        width: 90%;
+    }
+
+    .modal,
+    .modal[aria-position="center"] {
+        .modal-body {
+            max-height: 300px;
+        }
+    }
+
+}
+
+@include media-query( 'tablet' ) {
+    .modal[aria-position="center"].modal-lg > div.modal-dialog,
+    .modal.modal-lg > div.modal-dialog,
+    .modal .modal-dialog {
+        width: 75%;
+    }
+
+}
+
+// Modal Animations
+@-webkit-keyframes modalFadeInDown {
+    0% {
+        top: calc(50% - 50px);
+    }
+    100% {
+        top: 50%;
+    }
+}
+@keyframes modalFadeInDown {
+    0% {
+        top: calc(50% - 50px);
+    }
+    100% {
+        top: 50%;
+    }
+}

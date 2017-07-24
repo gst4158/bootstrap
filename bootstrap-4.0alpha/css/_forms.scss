@@ -1,0 +1,19 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Extends Bootstrap's forms
+//==========================================================================//
+.btn-inline-submit {
+    margin-top: 18px;
+}
+
+/* fix inline-forms that use a input-group addon */
+@include media-query( 'mobile' ) {
+    .form-inline .input-group {
+
+        &.mobile-12 {
+            padding: 0;
+        }
+
+    }
+}

@@ -1,0 +1,12 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Extends bootstraps accordion
+//==========================================================================//
+.accordion-wrapper {
+    .card-header {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

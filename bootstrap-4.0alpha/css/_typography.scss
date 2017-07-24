@@ -1,0 +1,25 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Styles that alter any text related elements/attributes
+//==========================================================================//
+h1, h2, h3, h4, h5, h6 {
+    font-family: $primary-font;
+    font-weight: $font-weight-normal;
+}
+
+p {
+    margin-bottom: 20px;
+    color: $black;
+    font-family: $primary-font;
+}
+
+a {
+    color: $brand-primary;
+}
+
+code {
+    p {
+        color: darken($brand-primary, 10%);
+    }
+}

@@ -1,0 +1,11 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Navigation - 4.0 bootstrap
+//==========================================================================//
+nav.has-bdr {
+
+    &.bdr-bottom {
+        border-bottom: 1px solid $gray-light;
+    }
+}

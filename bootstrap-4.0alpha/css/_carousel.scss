@@ -1,0 +1,47 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Extends Bootstrap's default carousel module
+//==========================================================================//
+body:not([data-device="mobile"]) .carousel  {
+    .carousel-control-prev,
+    .carousel-control-next,
+    .carousel-indicators,
+    .carousel-indicators li {
+        -webkit-transition: opacity .35s ease-in-out, background-color .35s ease-in-out, -webkit-transform .35s ease-in-out;
+        transition: opacity .35s ease-in-out, background-color .35s ease-in-out, transform .35s ease-in-out;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        opacity: 0;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .carousel-indicators {
+        opacity: 0;
+        li:hover,
+        li.active {
+            background: $brand-primary;
+        }
+    }
+
+    &:hover {
+        .carousel-control-prev,
+        .carousel-control-next,
+        .carousel-indicators {
+            opacity: 1;
+        }
+    }
+}
+
+body[data-device="mobile"] .carousel  {
+    .carousel-indicators {
+        li:hover,
+        li.active {
+            background: $brand-primary;
+        }
+    }
+}

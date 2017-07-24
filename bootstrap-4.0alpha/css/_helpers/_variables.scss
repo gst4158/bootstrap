@@ -1,0 +1,122 @@
+// !compileOnSave
+// compileOnSave: false
+
+//==========================================================================//
+// Bootstrap 4.0 alpha settings
+//==========================================================================//
+
+// Start with assigning color names to specific hex values.
+//================================//
+$white:  #fff !default;
+$black:  #000 !default;
+$red:    #d9534f !default;
+$orange: #f0ad4e !default;
+$yellow: #ffd500 !default;
+$green:  #5cb85c !default;
+$blue:   #0275d8 !default;
+$teal:   #5bc0de !default;
+$pink:   #ff5b77 !default;
+$purple: #613d7c !default;
+
+// Create grayscale
+//================================//
+$gray-dark:                 #292b2c !default;
+$gray:                      #464a4c !default;
+$gray-light:                #636c72 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+// Reassign color vars to semantic color scheme
+//================================//
+$brand-primary:             $blue !default;
+$brand-success:             $green !default;
+$brand-info:                $teal !default;
+$brand-warning:             $orange !default;
+$brand-danger:              $red !default;
+$brand-inverse:             $gray-dark !default;
+
+// Options
+// Quickly modify global styling by enabling or disabling optional features.
+//================================//
+$enable-rounded:            true !default;
+$enable-shadows:            false !default;
+$enable-gradients:          false !default;
+$enable-transitions:        true !default;
+$enable-hover-media-query:  false !default;
+$enable-grid-classes:       true !default;
+$enable-print-styles:       true !default;
+
+// Grid Stucture
+// take over bootstrap's default grid & container size
+//================================//
+// take over bootstrap's default grid
+$grid-breakpoints: (
+  mobile: 1px, // requires at least 1 px or it breaks
+  tablet: 600px,
+  desktop: 1020px,
+) !default;
+
+// take over bootstrap's default container
+$container-max-widths: (
+  mobile: 599px,
+  tablet: 1019px,
+  desktop: 1140px,
+);
+
+$directions: (
+  top,
+  right,
+  bottom,
+  left
+) !default;
+
+//==========================================================================//
+// Font Familes & Weights
+//==========================================================================//
+$font-opensans: 'Open Sans';
+$font-icons: 'Material Icons';
+$font-icons: 'FontAwesome';
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$small-font-size: 10px;
+
+$primary-font: $font-opensans;
+$secondary-font: $font-opensans;
+
+$font-list : (
+  // each string separated by a tabbed space is an index.
+  // 'css-class name' 'font-family'  'font weight'
+
+  // families
+  "txt-opensans-light"      $font-opensans  $font-weight-light,
+  "txt-opensans-regular"    $font-opensans  $font-weight-normal,
+  "txt-opensans-semibold"   $font-opensans  $font-weight-semibold,
+  "txt-opensans-bold"       $font-opensans  $font-weight-bold,
+
+);
+
+// bootstrap 4.0 alpha overrides
+$font-family-sans-serif: $font-opensans;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       $font-family-sans-serif !default;
+$link-hover-decoration: none !default; // override bootstrap
+
+//==========================================================================//
+// Overrides Stucture
+//==========================================================================//
+$colors : (
+  'grey-dark' $gray-dark,
+  'grey' $gray,
+  'grey-light'$gray-light,
+  'grey-lighter' $gray-lighter,
+  'grey-lightest' $gray-lightest,
+);
+
+$distance : (
+    0, 5, 10, 15, 20, 25, 30, 33, 35, 40, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
+  //0, 5, 10, 15, 20, 25, 30, 35, 40
+);

@@ -1,0 +1,102 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Font Family Generator
+// How to use: @include font-face($font-open-sans, 'fonts/open-sans.ttf', $font-weight-normal) {}
+//==========================================================================//
+// defaults to open sans and normal font weight
+@mixin font-face( $family, $filepath, $weight:normal ) {
+  @font-face {
+      font-family: $family;
+      src: url($filepath + '.eot');
+      src: local('\263A'),
+        url($filepath + '.eot#iefix') format('embedded-opentype'),
+        url($filepath + '.woff') format('woff'),
+        url($filepath + '.ttf') format('truetype'),
+        url($filepath + '.svg#open_sansbold') format('svg');
+      font-weight: $weight;
+      font-style: normal;
+  }
+}
+
+//==========================================================================//
+// Transition/Trainsforms Mixin
+// How to use: @include transition(type, length, easing)
+//==========================================================================//
+@mixin transitions( $type:all, $length:0.35s, $easing:ease-in-out ) {
+    -moz-transition: $type $length $easing;
+    -o-transition: $type $length $easing;
+    -webkit-transition: $type $length $easing;
+    transition: $type $length $easing;
+}
+//==========================================================================//
+// Media Query Break Points
+// How to use: @include media-query('tablet') {}
+// How to use - chain multiple media queries: @include media-query( $breakpoints:('mobile', 'tablet') ) {}
+//==========================================================================//
+@mixin media-query($breakpoints) {
+
+	@each $breakpoint in $breakpoints {
+
+		// mobile break point
+		@if $breakpoint == "mobile" {
+			@media screen and (max-width: 599px) {
+				@content;
+			}
+		}
+		// tablet break point
+		@else if $breakpoint == "tablet" {
+			@media screen and (min-width: 600px) and (max-width: 1019px) {
+				@content;
+			}
+		}
+		// desktop break point
+		@else if $breakpoint == "desktop" {
+			@media screen and (min-width: 1020px) {
+				@content;
+			}
+		}
+		// print
+		@else if $breakpoint == "print" {
+			@media print  {
+				@content;
+			}
+		}
+	}
+}
+
+//==========================================================================//
+// Bootstrap overrides
+// Uses bootstrap variables to create margin/padding overrides
+//==========================================================================//
+@mixin spacing-basics($distance, $hasBreakpoints : null){
+    // test if breakpoints are needed
+    $breakPoint: if($hasBreakpoints, #{$hasBreakpoints}-, '');
+
+    // loop through each css attr
+    @each $prop, $abbrev in (margin: margin, padding: padding) {
+      // margin/paddings auto
+      .#{$breakPoint}#{$abbrev}-top-auto     { #{$prop}-top: auto !important; }
+      .#{$breakPoint}#{$abbrev}-right-auto   { #{$prop}-right: auto !important; }
+      .#{$breakPoint}#{$abbrev}-bottom-auto  { #{$prop}-bottom: auto !important; }
+      .#{$breakPoint}#{$abbrev}-left-auto    { #{$prop}-left: auto !important; }
+
+      // loop through each dist
+      @each $dist in $distance {
+
+        .#{$breakPoint}#{$abbrev}-#{$dist}          { #{$prop}:        #{$dist}px !important; }
+        .#{$breakPoint}#{$abbrev}-top-#{$dist}      { #{$prop}-top:    #{$dist}px !important; }
+        .#{$breakPoint}#{$abbrev}-bottom-#{$dist}   { #{$prop}-bottom: #{$dist}px !important; }
+        .#{$breakPoint}#{$abbrev}-right-#{$dist}    { #{$prop}-right:  #{$dist}px !important; }
+        .#{$breakPoint}#{$abbrev}-left-#{$dist}     { #{$prop}-left:   #{$dist}px !important; }
+        .#{$breakPoint}#{$abbrev}-vertical-#{$dist} {
+            #{$prop}-top:   #{$dist}px !important;
+            #{$prop}-bottom:   #{$dist}px !important;
+        }
+        .#{$breakPoint}#{$abbrev}-horizontal-#{$dist} {
+            #{$prop}-left:   #{$dist}px !important;
+            #{$prop}-right:   #{$dist}px !important;
+        }
+      }
+    }
+}

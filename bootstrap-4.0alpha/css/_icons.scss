@@ -1,0 +1,38 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Material Design Icons
+// Useage: https://material.io/icons/
+//==========================================================================//
+.has-icon {
+  position: relative;
+  font-family: $font-icons;
+  font-weight: $font-weight-normal;
+  font-style: normal;
+  // color: $anchorColor;
+  // font-size: 24px;   Preferred icon size
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  top: 2.5px;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+  &:hover {
+    //cursor: pointer;
+    //color: darken($anchorColor, 15%);
+  }
+
+}

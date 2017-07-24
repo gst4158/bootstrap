@@ -1,0 +1,17 @@
+// !compileOnSave
+// compileOnSave: false
+// Base Class Definition
+// -------------------------
+
+.#{$fa-css-prefix} {
+  display: inline-block;
+  font-family: 'FontAwesome';
+  font-size: #{$fa-font-size-base};
+  line-height: #{$fa-line-height-base};
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}

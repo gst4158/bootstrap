@@ -1,0 +1,32 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Animated scrolling elements used with jQuery smoothscroll function
+// Useage:
+    // <a href="#target" class="smoothScroll-parent">Smoothscroll Top</a>
+    // <a href="#top" class="smoothScroll">Smoothscroll Inner Div Top</a>
+    // <a href="#middle" class="smoothScroll" style="margin-top: 0;">Smoothscroll Inner Div Middle</a>
+    // <a href="#bottom" class="smoothScroll" style="margin-top: 0;">Smoothscroll Inner Div Bottom</a>
+    //
+    // <div id="target" class="scrollable">
+    //     <div class="smoothScrollContainer">
+    //         <p id="top">
+    //             Sweet jelly-o toffee chupa chups. Sweet roll pudding candy canes bear claw. Cheesecake dragée cake jelly beans. Chocolate bar chocolate cake fruitcake cotton candy ice cream sweet. Chocolate bar tootsie roll cupcake jujubes tootsie roll. Sweet roll ice cream dragée fruitcake. Tootsie roll candy canes gummies fruitcake candy canes sesame snaps. Bonbon brownie caramels cupcake dragée sweet roll croissant. Cookie candy cake fruitcake cake lemon drops gingerbread gingerbread chocolate bar. Ice cream cheesecake macaroon oat cake carrot cake marzipan dragée dessert marshmallow. Brownie biscuit macaroon cake. Apple pie cake cheesecake icing marzipan.
+    //         </p>
+    //         <p id="middle">
+    //             Wafer soufflé chupa chups chocolate cake cotton candy soufflé tootsie roll jelly-o carrot cake. Topping soufflé marzipan ice cream ice cream chocolate cake. Candy cookie cookie tart gummies liquorice halvah wafer pastry. Danish donut biscuit macaroon. Jujubes gummi bears liquorice wafer bonbon toffee cupcake halvah. Donut biscuit dessert ice cream biscuit chocolate bar. Cake cake jujubes jujubes cupcake soufflé tiramisu fruitcake tootsie roll. Pie cheesecake croissant. Sweet roll danish halvah wafer fruitcake liquorice pastry brownie tart. Fruitcake jujubes apple pie ice cream marshmallow toffee. Macaroon fruitcake chocolate cake cake toffee ice cream muffin gingerbread carrot cake. Donut caramels liquorice muffin fruitcake. Sweet icing topping macaroon.
+    //         </p>
+    //         <p id="bottom">
+    //             Tootsie roll oat cake brownie cake oat cake chocolate gingerbread. Bear claw macaroon cotton candy chocolate bar pudding fruitcake biscuit danish. Chocolate chupa chups cake cake ice cream lemon drops tiramisu cake. Caramels marshmallow dessert macaroon cheesecake pudding. Liquorice chocolate powder. Chocolate candy canes chocolate cake dragée. Candy tiramisu pastry jelly-o caramels cookie liquorice. Cheesecake powder liquorice marzipan muffin lollipop. Chocolate jujubes dragée sweet roll ice cream chocolate bar pudding liquorice. Macaroon halvah marshmallow topping candy jelly beans gummies sesame snaps. Danish marshmallow bear claw chocolate. Powder apple pie cake lollipop tart. Chocolate cake gingerbread fruitcake croissant cheesecake. Tootsie roll gummi bears halvah lollipop tart.
+    //         </p>
+    //     </div>
+    // </div>
+//==========================================================================//
+
+.scrollable {
+    border: 1px solid #c5c5c5;
+    height: 250px;
+    overflow-y: auto;
+    background: #ebebeb;
+    padding: 10px;
+}

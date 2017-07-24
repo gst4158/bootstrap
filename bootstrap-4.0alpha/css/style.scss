@@ -1,1 +1,54 @@
-d
+// Imports
+// ============================================//
+// custom imports
+@import '_helpers/_functions.scss';
+@import '_helpers/_variables.scss';
+@import '_helpers/_mixins.scss';
+
+// Bootstrap Import - v4 alpha
+// https://v4-alpha.getbootstrap.com/components
+// *DEV note* several parts of bootstrap core have been edited to make it simpler
+    // _utilities - added some _basic versions of files or turned off some utilities completely
+// ============================================//
+@import '_bootstrap.scss';
+
+// Font-Awesome - Version 4.7.0
+// http://fontawesome.io/
+// ============================================//
+@import "_font-awesome.scss";
+
+// Manual Reset
+// ============================================//
+@import '_reset.scss';
+
+// Core Module Imports
+// ============================================//
+@import '_accordion.scss';
+@import '_btn.scss';
+@import '_card.scss';
+@import '_carousel.scss';
+@import '_code.scss';
+@import '_forms.scss';
+@import '_grid.scss';
+@import '_icons.scss';
+@import '_jumbotron.scss';
+@import '_messages.scss';
+@import '_modal.scss';
+@import '_navigation.scss';
+@import '_scrollable.scss';
+@import '_typography.scss';
+
+// Section and Plugin Module Imports
+// ============================================//
+
+// Generate font-face styles
+// ============================================//
+@include font-face($font-icons,    '../fonts/fontawesome-webfont',      $font-weight-normal);
+@include font-face($font-opensans, '../fonts/opensans-light-webfont',   $font-weight-light);
+@include font-face($font-opensans, '../fonts/opensans-regular-webfont', $font-weight-normal);
+@include font-face($font-opensans, '../fonts/opensans-bold-webfont',    $font-weight-semibold);
+@include font-face($font-opensans, '../fonts/opensans-semibold-webfont',$font-weight-bold);
+
+// Overrides - Load this part last
+// ============================================//
+@import '_helpers/_overrides.scss';
